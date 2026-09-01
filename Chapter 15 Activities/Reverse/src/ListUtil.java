@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.LinkedList;
 
 /**
@@ -12,6 +13,6 @@ public class ListUtil
     */
     public static void reverse(LinkedList<String> strings)
     {
-        ...
+        Collections.reverse(strings);
     }
 }
