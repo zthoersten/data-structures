@@ -1,4 +1,6 @@
+import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 /**
  * Implement a to do list. Tasks have a priority between 
@@ -12,15 +14,14 @@ import java.util.Scanner;
 public class ToDoList
 {
     // Instance variable(s)
-    . . .
-
+    Queue<Task> toDo = new LinkedList<>();
     /**
      * Constructor
     */
     public ToDoList()
     {
         // Complete this
-        . . .
+
     }
 
     /**
@@ -60,8 +61,11 @@ public class ToDoList
     public void addTask(String optionStr)
     {
         // Complete this method
-        . . .
-            
+        Integer space = optionStr.indexOf(" ");
+        Integer priority = Integer.parseInt(optionStr.split(" ")[1]);
+        String task = optionStr.substring(space);
+
+        toDo.add(new Task(priority,task));
             
     }
 
@@ -71,11 +75,10 @@ public class ToDoList
     */
     public void nextTask()
     {
-        Task next = null;
+
+        Task next = toDo.remove();
         
         // Complete this method
-        . . .
-        
         
         if (next == null)
         {
